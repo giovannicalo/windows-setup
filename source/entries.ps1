@@ -347,7 +347,7 @@ $otherEntries = @(
 		# Remove recently added apps from start menu
 		@("HideRecentlyAddedApps", 1),
 		# Lock start menu, necessary to remove pins, and disable pinning
-		@("LockedStartLayout", 0),
+		@("LockedStartLayout", 1),
 		# Disable looking for apps in the store to open files
 		@("NoUseStoreOpenWith", 1),
 		# Remove pins from start menu
