@@ -20,6 +20,7 @@ if ($isPowerShellCore) {
 . (Join-Path $PSScriptRoot ".\disable-tasks.ps1")
 . (Join-Path $PSScriptRoot ".\display-footer.ps1")
 . (Join-Path $PSScriptRoot ".\display-header.ps1")
+. (Join-Path $PSScriptRoot ".\edit-environment.ps1")
 . (Join-Path $PSScriptRoot ".\edit-registry.ps1")
 . (Join-Path $PSScriptRoot ".\entries.ps1")
 . (Join-Path $PSScriptRoot ".\features.ps1")
@@ -28,10 +29,13 @@ if ($isPowerShellCore) {
 . (Join-Path $PSScriptRoot ".\services.ps1")
 . (Join-Path $PSScriptRoot ".\tasks.ps1")
 . (Join-Path $PSScriptRoot ".\uninstall-onedrive.ps1")
+. (Join-Path $PSScriptRoot ".\variables.ps1")
 
 displayHeader
 
 setTimeZone
+
+editEnvironment $variables
 
 editRegistry $entries
 
