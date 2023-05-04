@@ -87,7 +87,7 @@ $otherEntries = @(
 		# Delete Edge browsing data on exit
 		@("ClearBrowsingDataOnExit", 0),
 		# Set download directory
-		@("DownloadDirectory", "$Env:Home\Desktop")
+		@("DownloadDirectory", "$Env:UserProfile\Desktop")
 		# Disable Edge's sidebar
 		@("HubsSidebarEnabled", 0),
 		# Prevent Edge from sharing data with Windows
