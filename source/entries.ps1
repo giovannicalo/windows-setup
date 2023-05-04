@@ -7,6 +7,8 @@ $otherEntries = @(
 	@(@("HKLM", $null), "Software\Microsoft\Windows\CurrentVersion\Policies\System", @(
 		# Display last successful login and failed login attempts on login
 		@("DisplayLastLogonInfo", 1),
+		# Automatically lock after 30 minutes of inactivity
+		@("InactivityTimeoutSecs", 1800),
 		$null
 	)),
 	@(@("HKLM", $null), "Software\Policies\Microsoft\Windows\AdvertisingInfo", @(
