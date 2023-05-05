@@ -277,6 +277,13 @@ $otherEntries = @(
 		@("EnthusiastMode", 1),
 		$null
 	)),
+	@(@("HKCU", $null), "Software\Microsoft\Windows\CurrentVersion\Notifications\Settings", @(
+		# Disable critical lock screen notifications
+		@("NOC_GLOBAL_SETTING_ALLOW_CRITICAL_TOASTS_ABOVE_LOCK", 0),
+		# Disable regular lock screen notifications
+		@("NOC_GLOBAL_SETTING_ALLOW_TOASTS_ABOVE_LOCK", 0),
+		$null
+	)),
 	@(@("HKCU", $null), "Software\Microsoft\Windows\CurrentVersion\Policies\Explorer", @(
 		# Show icons in Control Panel
 		@("ForceClassicControlPanel", 1),
