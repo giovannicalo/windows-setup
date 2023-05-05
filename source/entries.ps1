@@ -147,11 +147,11 @@ $otherEntries = @(
 		# Allow using TPM
 		@("UseTPM", 2),
 		# Allow using TPM and key
-		@("UseTPMKey", 1),
+		@("UseTPMKey", 2),
 		# Allow Using TPM, PIN and key [TODO: Verify]
-		@("UseTPMKeyPIN", 1),
+		@("UseTPMKeyPIN", 2),
 		# Allow using TPM and PIN
-		@("UseTPMPIN", 1)
+		@("UseTPMPIN", 2)
 	)),
 	@(@("HKLM", $null), "Software\Policies\Microsoft\SQMClient\Windows", @(
 		# Disable Customer Experience Improvement Program [TODO: Verify]
