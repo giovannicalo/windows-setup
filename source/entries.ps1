@@ -347,6 +347,64 @@ $otherEntries = @(
 		# Disable recent files history
 		@("NoRecentDocsHistory", 1)
 	)),
+	@(@("HKLM", "HKCU"), "Software\Policies\Google\Chrome", @(
+		# Hide some ads in Chrome
+		@("AdsSettingForIntrusiveAdsSites", 2),
+		# Prevent Chrome from saving and autofilling addresses
+		@("AutofillAddressEnabled", 0),
+		# Prevent Chrome from saving and autofilling credit cards
+		@("AutofillCreditCardEnabled", 0),
+		# Block third-party cookies in Chrome
+		@("BlockThirdPartyCookies", 1),
+		# Disable Chrome sign in
+		@("BrowserSignin", 0),
+		# Clear cookies on exit in Chrome
+		@("DefaultCookiesSetting", 4),
+		# Disable share button in Chrome
+		@("DesktopSharingHubEnabled", 0),
+		# Enable developer tools everywhere in Chrome
+		@("DeveloperToolsAvailability", 1),
+		# Disable Chrome synchronization
+		@("SyncDisabled", 1),
+		# Enable DNS over HTTPS with fallback in Chrome
+		@("DnsOverHttpsMode", "automatic"),
+		# Set Chrome download directory
+		@("DownloadDirectory", "$Env:UserProfile\Desktop"),
+		# Enable hardware acceleration in Chrome
+		@("HardwareAccelerationModeEnabled", 1),
+		# Force incognito mode in Chrome
+		@("IncognitoModeAvailability", 2),
+		# Disable preloading pages in Chrome
+		@("NetworkPredictionOptions", 2),
+		# Prevent Chrome from saving passwords
+		@("PasswordManagerEnabled", 0)
+		# Prevent websites from querying payment methods in Chrome
+		@("PaymentMethodQueryEnabled", 0),
+		# Disable remote access in Chrome [TODO: Verify]
+		@("RemoteAccessHostAllowRemoteAccessConnections", 0),
+		# Disable enhanced protection in Chrome
+		@("SafeBrowsingExtendedReportingEnabled", 0),
+		# Disable history in Chrome
+		@("SavingBrowserHistoryDisabled", 1),
+		# Disable search suggestions in Chrome
+		@("SearchSuggestEnabled", 0),
+		# Show full URLs in Chrome
+		@("ShowFullUrlsInAddressBar", 1),
+		# Show home button in Chrome
+		@("ShowHomeButton", 1),
+		# Enable spellcheck in Chrome
+		@("SpellcheckEnabled", 1),
+		# Disable enhanced spellcheck in Chrome
+		@("SpellcheckServiceEnabled", 0),
+		# Disable automatic translation in Chrome
+		@("TranslateEnabled", 0),
+		# Disable URL data collection in Chrome
+		@("UrlKeyedAnonymizedDataCollectionEnabled", 0),
+		# Disable user feedback in Chrome
+		@("UserFeedbackAllowed", 0),
+		# Disable WebRTC telemetry in Chrome [TODO: Verify]
+		@("WebRtcEventLogCollectionAllowed", 0)
+	)),
 	@(@("HKLM", "HKCU"), "Software\Policies\Microsoft\Windows\CredUI", @(
 		# Remove reveal button from password input fields
 		@("DisablePasswordReveal", 0),
