@@ -21,9 +21,11 @@ if ($isPowerShellCore) {
 . (Join-Path $PSScriptRoot ".\display-footer.ps1")
 . (Join-Path $PSScriptRoot ".\display-header.ps1")
 . (Join-Path $PSScriptRoot ".\edit-environment.ps1")
+. (Join-Path $PSScriptRoot ".\edit-folders.ps1")
 . (Join-Path $PSScriptRoot ".\edit-registry.ps1")
 . (Join-Path $PSScriptRoot ".\entries.ps1")
 . (Join-Path $PSScriptRoot ".\features.ps1")
+. (Join-Path $PSScriptRoot ".\folders.ps1")
 . (Join-Path $PSScriptRoot ".\remove-apps.ps1")
 . (Join-Path $PSScriptRoot ".\set-time-zone.ps1")
 . (Join-Path $PSScriptRoot ".\services.ps1")
@@ -48,6 +50,8 @@ disableFeatures $features
 removeApps $apps
 
 uninstallOneDrive
+
+editFolders $folders
 
 Copy-Item -Destination $Env:SystemRoot -Path "$PSScriptRoot\..\resources\*" -Recurse
 
