@@ -88,7 +88,7 @@ $otherEntries = @(
 		@("BackgroundModeEnabled", 0),
 		# Delete Edge browsing data on exit
 		@("ClearBrowsingDataOnExit", 0),
-		# Set download directory
+		# Set Edge download directory
 		@("DownloadDirectory", "$Env:UserProfile\Desktop")
 		# Disable Edge's sidebar
 		@("HubsSidebarEnabled", 0),
