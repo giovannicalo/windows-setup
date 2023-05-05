@@ -5,4 +5,5 @@ function disableServices {
 		Set-Service -Name $_ -StartupType Disabled
 	}
 	Write-Host " [DONE]" -ForegroundColor "Green"
+	Write-Host
 }

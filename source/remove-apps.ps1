@@ -8,4 +8,5 @@ function removeApps {
 		$_.Name -in $apps
 	} | Remove-AppxPackage -AllUsers
 	Write-Host " [DONE]" -ForegroundColor "Green"
+	Write-Host
 }

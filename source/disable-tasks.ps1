@@ -5,4 +5,5 @@ function disableTasks {
 		$_.TaskName -in $tasks -and $_.State -eq "Ready"
 	} | Disable-ScheduledTask
 	Write-Host " [DONE]" -ForegroundColor "Green"
+	Write-Host
 }
