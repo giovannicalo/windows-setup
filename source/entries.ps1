@@ -305,6 +305,11 @@ $otherEntries = @(
 		@("AppsUseLightTheme", 0),
 		$null
 	)),
+	@(@("HKCU", $null), "Software\Microsoft\Windows\CurrentVersion\UserProfileEngagement", @(
+		# Prevent receiving suggestions in notifications
+		@("ScoobeSystemSettingEnabled", 0),
+		$null
+	)),
 	@(@("HKCU", $null), "Software\Policies\Microsoft\Control Panel\International", @(
 		# Disable autocorrect for software keyboard
 		@("TurnOffAutocorrectMisspelledWords", 1),
