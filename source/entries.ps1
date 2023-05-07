@@ -8,8 +8,7 @@ $otherEntries = @(
 		# Display last successful login and failed login attempts on login
 		@("DisplayLastLogonInfo", 1),
 		# Automatically lock after 30 minutes of inactivity
-		@("InactivityTimeoutSecs", 1800),
-		$null
+		@("InactivityTimeoutSecs", 1800)
 	)),
 	@(@("HKLM", $null), "Software\Policies\Microsoft\Windows\AdvertisingInfo", @(
 		# Disable advertising ID
@@ -186,6 +185,10 @@ $otherEntries = @(
 	@(@("HKCU", $null), "Control Panel\International", @(
 		# Set first day of the week to Monday
 		@("iFirstDayOfWeek", 0),
+		# Set measurement system to metric
+		@("iMeasure", 0),
+		# Set currency to GBP
+		@("sCurrency", "£"),
 		# Set long date format to DDDD D MMMM YYYY
 		@("sLongDate", "dddd d MMMM yyyy")
 		# Set short date format to YYYY-MM-DD
@@ -251,9 +254,11 @@ $otherEntries = @(
 	@(@("HKCU", $null), "Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced", @(
 		# Show hidden files
 		@("Hidden", 1),
+		# Don't hide empty drives
+		@("HideDrivesWithNoMedia", 0),
 		# Show file extensions
 		@("HideFileExt", 0),
-		# Start explorer on drive list
+		# Start Explorer on drive list
 		@("LaunchTo", 1),
 		# Remove task view button from taskbar
 		@("ShowTaskViewButton", 0),
@@ -272,6 +277,11 @@ $otherEntries = @(
 		@("DisableAutoplay", 1),
 		$null
 	)),
+	@(@("HKCU", $null), "Software\Microsoft\Windows\CurrentVersion\Explorer\CabinetState", @(
+		# Display full path in title bar in Explorer
+		@("FullPath", 1),
+		$null
+	)),
 	@(@("HKCU", $null), "Software\Microsoft\Windows\CurrentVersion\Explorer\OperationStatusManager", @(
 		# Show graph on file operations dialog
 		@("EnthusiastMode", 1),
@@ -281,8 +291,7 @@ $otherEntries = @(
 		# Disable critical lock screen notifications
 		@("NOC_GLOBAL_SETTING_ALLOW_CRITICAL_TOASTS_ABOVE_LOCK", 0),
 		# Disable regular lock screen notifications
-		@("NOC_GLOBAL_SETTING_ALLOW_TOASTS_ABOVE_LOCK", 0),
-		$null
+		@("NOC_GLOBAL_SETTING_ALLOW_TOASTS_ABOVE_LOCK", 0)
 	)),
 	@(@("HKCU", $null), "Software\Microsoft\Windows\CurrentVersion\Policies\Explorer", @(
 		# Show icons in Control Panel
@@ -328,7 +337,7 @@ $otherEntries = @(
 		@("DisableWindowsSpotlightWindowsWelcomeExperience", 1)
 	)),
 	@(@("HKCU", $null), "Software\Policies\Microsoft\Windows\Explorer", @(
-		# Disable search history in explorer
+		# Disable search history in Explorer
 		@("DisableSearchBoxSuggestions", 1),
 		# Disable showing Edge tabs in app switcher
 		@("MultiTaskingAltTabFilter", 4),
