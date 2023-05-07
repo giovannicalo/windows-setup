@@ -1,7 +1,7 @@
 $variables = @(
 	@("Machine", @(
 		# Only execute files with the right extensions
-		@("PATHEXT", ".bat;.exe"),
+		@("PATHEXT", ".bat;.cmd;.com;.exe"),
 		# Disable PowerShell telemetry
 		@("POWERSHELL_TELEMETRY_OPTOUT", "1"),
 		$null
