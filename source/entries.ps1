@@ -189,8 +189,6 @@ $otherEntries = @(
 		@("iFirstDayOfWeek", 0),
 		# Set measurement system to metric
 		@("iMeasure", 0),
-		# Set currency to GBP
-		@("sCurrency", "£"),
 		# Set long date format to DDDD D MMMM YYYY
 		@("sLongDate", "dddd d MMMM yyyy")
 		# Set short date format to YYYY-MM-DD
