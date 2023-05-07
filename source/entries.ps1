@@ -4,6 +4,8 @@ $paint3dEntries = @("3mf", "bmp", "fbx", "gif", "glb", "jfif", "jpe", "jpeg", "j
 }
 
 $otherEntries = @(
+	# Remove share from context menu
+	@(@("HKCR", $null), "``*\shellex\ContextMenuHandlers\ModernSharing", "UNSET"),
 	@(@("HKLM", $null), "Software\Microsoft\Windows\CurrentVersion\Policies\System", @(
 		# Display last successful login and failed login attempts on login
 		@("DisplayLastLogonInfo", 1),

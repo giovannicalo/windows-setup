@@ -1,6 +1,7 @@
 function editRegistry {
 	Write-Host "Editing registry."
 	Write-Host
+	$null = New-PSDrive -Name HKCR -PSProvider Registry -Root HKEY_CLASSES_ROOT
 	$args[0] | ForEach-Object {
 		if (!($_)) {
 			return
