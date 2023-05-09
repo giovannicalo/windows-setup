@@ -3,8 +3,6 @@ $apps = @(
 	"Microsoft.3DBuilder",
 	# Cortana
 	"Microsoft.549981C3F5F10",
-	# [TODO: Verify]
-	"Microsoft.Advertising.Xaml",
 	# Weather
 	"Microsoft.BingWeather",
 	# Get Help
@@ -31,8 +29,6 @@ $apps = @(
 	"Microsoft.People",
 	# Print 3D
 	"Microsoft.Print3D",
-	# [TODO: Verify]
-	"Microsoft.Services.Store.Engagement",
 	# Skype
 	"Microsoft.SkypeApp",
 	# [TODO: Verify]
