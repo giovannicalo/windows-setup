@@ -15,6 +15,7 @@ if ($isPowerShellCore) {
 }
 
 . (Join-Path $PSScriptRoot ".\apps.ps1")
+. (Join-Path $PSScriptRoot ".\copy-resources.ps1")
 . (Join-Path $PSScriptRoot ".\disable-features.ps1")
 . (Join-Path $PSScriptRoot ".\disable-services.ps1")
 . (Join-Path $PSScriptRoot ".\disable-tasks.ps1")
@@ -27,6 +28,7 @@ if ($isPowerShellCore) {
 . (Join-Path $PSScriptRoot ".\features.ps1")
 . (Join-Path $PSScriptRoot ".\folders.ps1")
 . (Join-Path $PSScriptRoot ".\remove-apps.ps1")
+. (Join-Path $PSScriptRoot ".\resources.ps1")
 . (Join-Path $PSScriptRoot ".\set-time-zone.ps1")
 . (Join-Path $PSScriptRoot ".\services.ps1")
 . (Join-Path $PSScriptRoot ".\tasks.ps1")
@@ -53,7 +55,7 @@ uninstallOneDrive
 
 editFolders $folders
 
-Copy-Item -Destination $Env:SystemRoot -Path "$PSScriptRoot\..\resources\*" -Recurse
+copyResources $resources
 
 Stop-Process -Name explorer
 
