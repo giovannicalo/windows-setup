@@ -16,6 +16,7 @@ if ($isPowerShellCore) {
 
 . (Join-Path $PSScriptRoot ".\apps.ps1")
 . (Join-Path $PSScriptRoot ".\copy-resources.ps1")
+. (Join-Path $PSScriptRoot ".\disable-automatic-reboot.ps1")
 . (Join-Path $PSScriptRoot ".\disable-features.ps1")
 . (Join-Path $PSScriptRoot ".\disable-services.ps1")
 . (Join-Path $PSScriptRoot ".\disable-tasks.ps1")
@@ -42,6 +43,8 @@ setTimeZone
 editEnvironment $variables
 
 editRegistry $entries
+
+disableAutomaticReboot
 
 disableServices $services
 
