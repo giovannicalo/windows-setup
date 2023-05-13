@@ -175,13 +175,13 @@ $otherEntries = @(
 	@(@("HKLM", $null), "Software\Policies\Microsoft\Windows\WindowsUpdate", @(
 		# Disable automatic wake to install updates [TODO: Verify]
 		@("AUPowerManagement", 0),
-		# Disable reboot notifications after installing updates
+		# Disable reboot notifications after installing updates [TODO: Verify]
 		@("SetAutoRestartNotificationDisable", 1)
 	)),
 	@(@("HKLM", $null), "Software\Policies\Microsoft\Windows\WindowsUpdate\AU", @(
-		# Notify the user before downloading updates
-		@("AUOptions", 0),
-		# Prevent automatic reboot after installing updates
+		# Prevent automatically downloading updates
+		@("AUOptions", 2),
+		# Prevent automatically rebooting while not idle
 		@("NoAutoRebootWithLoggedOnUsers", 1)
 	)),
 	@(@("HKCU", $null), "Control Panel\International", @(
@@ -251,6 +251,11 @@ $otherEntries = @(
 		# Prevent apps from getting installed again [TODO: Verify]
 		@("SystemPaneSuggestionsEnabled", 0)
 	)),
+	@(@("HKCU", $null), "Software\Microsoft\Windows\CurrentVersion\Explorer", @(
+		# Prevent automatically adding recent folders to Quick Access
+		@("ShowFrequent", 0),
+		$null
+	)),
 	@(@("HKCU", $null), "Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced", @(
 		# Show hidden files
 		@("Hidden", 1),
@@ -277,16 +282,13 @@ $otherEntries = @(
 		@("DisableAutoplay", 1),
 		$null
 	)),
-	@(@("HKCU", $null), "Software\Microsoft\Windows\CurrentVersion\Explorer\CabinetState", @(
-		# Display full path in title bar in Explorer
-		@("FullPath", 1),
-		$null
-	)),
 	@(@("HKCU", $null), "Software\Microsoft\Windows\CurrentVersion\Explorer\OperationStatusManager", @(
 		# Show graph on file operations dialog
 		@("EnthusiastMode", 1),
 		$null
 	)),
+	# Clear recent folders
+	@(@("HKCU", $null), "Software\Microsoft\Windows\CurrentVersion\Explorer\TypedPaths", "UNSET"),
 	@(@("HKCU", $null), "Software\Microsoft\Windows\CurrentVersion\Notifications\Settings", @(
 		# Disable critical lock screen notifications
 		@("NOC_GLOBAL_SETTING_ALLOW_CRITICAL_TOASTS_ABOVE_LOCK", 0),
