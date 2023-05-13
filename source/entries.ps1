@@ -1,6 +1,6 @@
 $paint3dEntries = @("3mf", "bmp", "fbx", "gif", "glb", "jfif", "jpe", "jpeg", "jpg", "obj", "ply", "png", "stl", "tif", "tiff") | ForEach-Object {
 	# Remove 3D Edit from context menu
-	@((@("HKLM", $null), "Software\Classes\SystemFileAssociations\.$_\Shell\3D Edit", "UNSET"), $null)
+	@(@(@("HKLM", $null), "Software\Classes\SystemFileAssociations\.$_\Shell\3D Edit", "UNSET"), $null)
 }
 
 $otherEntries = @(
@@ -49,11 +49,6 @@ $otherEntries = @(
 	@(@("HKLM", $null), "Software\Policies\Microsoft\WindowsInkWorkspace", @(
 		# Disable Windows Ink
 		@("AllowWindowsInkWorkspace", 0),
-		$null
-	)),
-	@(@("HKLM", $null), "System\CurrentControlSet\Control\FileSystem", @(
-		# Remove path length limit
-		@("LongPathsEnabled", 1),
 		$null
 	)),
 	# Remove Downloads folder from Explorer
@@ -183,6 +178,11 @@ $otherEntries = @(
 		@("AUOptions", 2),
 		# Prevent automatically rebooting while not idle
 		@("NoAutoRebootWithLoggedOnUsers", 1)
+	)),
+	@(@("HKLM", $null), "System\CurrentControlSet\Control\FileSystem", @(
+		# Remove path length limit
+		@("LongPathsEnabled", 1),
+		$null
 	)),
 	@(@("HKCU", $null), "Control Panel\International", @(
 		# Set first day of the week to Monday
@@ -443,4 +443,4 @@ $otherEntries = @(
 	))
 )
 
-$entries = $paint3dEntries + $otherEntries
+$entries = $paint3dEntries + $powerEntries + $otherEntries
