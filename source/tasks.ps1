@@ -15,6 +15,8 @@ $tasks = @(
 	"ProgramDataUpdater",
 	# Windows Error Reporting [TODO: Verify]
 	"QueueReporting",
+	# Microsoft Compatibility Telemetry [TODO: Verify]
+	"PcaPatchDbTask",
 	# Microsoft Customer Experience Improvement Program [TODO: Verify]
 	"Proxy",
 	# Microsoft Customer Experience Improvement Program [TODO: Verify]
