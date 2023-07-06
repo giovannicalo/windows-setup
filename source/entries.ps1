@@ -298,7 +298,8 @@ $otherEntries = @(
 	@(@("HKCU", $null), "Software\Microsoft\Windows\CurrentVersion\Policies\Explorer", @(
 		# Show icons in Control Panel
 		@("ForceClassicControlPanel", 1),
-		$null
+		# Prevent signing out
+		@("StartMenuLogOff", 1)
 	)),
 	@(@("HKCU", $null), "Software\Microsoft\Windows\CurrentVersion\Policies\System", @(
 		# Set the wallpaper
@@ -443,4 +444,4 @@ $otherEntries = @(
 	))
 )
 
-$entries = $paint3dEntries + $powerEntries + $otherEntries
+$entries = $paint3dEntries + $otherEntries
